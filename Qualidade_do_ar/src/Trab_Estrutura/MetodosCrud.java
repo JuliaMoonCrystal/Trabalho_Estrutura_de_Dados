@@ -20,12 +20,12 @@ public class MetodosCrud {
 		  BufferedWriter writer = new BufferedWriter(new FileWriter( fileName ));
 		
 		//aqui pergunta ao usauario quantos novos dados ele ira adicionar na lista//
-		  int novo_elemento=Integer.parseInt(JOptionPane.showInputDialog("Qantos novos dados você quer adicionar na lista ?"));
+		  int novo_elemento=Integer.parseInt(JOptionPane.showInputDialog("Quantos novos dados você quer adicionar na lista ?"));
 		  
 		//aqui existe um laço para o usuario digitar as variaveis//  
 		 for(int i=0;i<novo_elemento;i++){
 			 String nova_regiao=JOptionPane.showInputDialog("Digite uma Região de São Paulo :");
-			 int novo_indice=Integer.parseInt(JOptionPane.showInputDialog("Digite o indice de poluição :"));
+			 double novo_indice=Double.parseDouble(JOptionPane.showInputDialog("Digite o indice de poluição :"));
 			 String nova_qualidade=JOptionPane.showInputDialog("Digite a qualidade do ar :");
 			 
 			 dados_lista.add(new dados(nova_regiao,novo_indice,nova_qualidade));
@@ -57,7 +57,7 @@ public class MetodosCrud {
          String line = ""; 
      
    //AQUI VAI LER LINHA POR LINHA DO ARQUIVO E MOSTRAR NO CONSOLE//
-         System.out.println(" \n\n Aqui os dados que tem no arquivo :");
+         System.out.println(" \n\n Aqui os dados que temos no arquivo :");
          while (true) {
              if (line != null) {
                 System.out.println(line);
@@ -79,21 +79,18 @@ public class MetodosCrud {
 
 	public void Delete(LinkedList<dados> dados_lista) throws IOException {
 		
-		 String fileName = "Entrada.txt";
-		 BufferedReader ler = new BufferedReader(new FileReader( fileName ));
-         String line = ""; 
+		//AQUI PEGAMOS O ARQUIVO E CRIAMOS UMA VARIAVEL STRING EM BRANCO //
+		  String fileName = "Entrada.txt";
+		  BufferedWriter writer = new BufferedWriter(new FileWriter( fileName ));
+		  String line="";
 		
-		 while (true) {
-             if (line != null) {
-              //  System.out.println(line);
-             } else
-                 break;
-             line = ler.readLine();
-             
-         }
-         ler.close();		
-		
-		
+	   //AQUI VAMOS PERCORRER CADA LINHA  DO ARQUIVO E ESCREVEMOS A LINHA EM BRANCO NO LUGAR DOS DADOS//
+	   //ASSIM "APAGAMOS" OS REGISTROS//	  
+		  for(dados dado : dados_lista){
+        	  writer.write(line);
+        	  writer.newLine();	
+        }         
+        writer.close();
 	}
 
 	public void Pesquisa(LinkedList<dados> dados_lista) {
