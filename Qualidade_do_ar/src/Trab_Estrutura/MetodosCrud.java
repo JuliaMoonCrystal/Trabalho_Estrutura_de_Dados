@@ -15,6 +15,14 @@ public class MetodosCrud {
 	
 	public LinkedList<dados> Create(LinkedList<dados> dados_lista) throws IOException {
 		
+       //AQUI USAMOS VAMOS CALCULAR O DESEMPENHO DO METODO//	
+		long tempo_Inicial = System.currentTimeMillis();
+		long tempo_Final=0;
+      
+	  //AQUI CRIAMOS O ARQUIVO DESENPENHO.LOG PARA GUARDAR O TEMPO DE DESENPENHO// 	
+		 String file_desempenho="Desempenho.log";
+		 BufferedWriter write = new BufferedWriter(new FileWriter( file_desempenho ));
+		
 		//Aqui tem a criação do arquivo //
 		  String fileName = "Entrada.txt";
 		  BufferedWriter writer = new BufferedWriter(new FileWriter( fileName ));
@@ -45,8 +53,13 @@ public class MetodosCrud {
         	  writer.newLine();	
         }         
         writer.close();
+        
+      //AQUI ELE GRAVA O TEMPO QUE LEVOU PARA A GRAVAÇÃO DO ARQUIVO TERMINAR// 
+        tempo_Final=System.currentTimeMillis()-tempo_Inicial;
+        write.write(" O metodo CREATE levou : "+tempo_Final+ " para ser executado");
+        write.close();
+        
 		return dados_lista;
-		
 	}
 
 	public void Read(LinkedList<dados> dados_lista) throws IOException {
