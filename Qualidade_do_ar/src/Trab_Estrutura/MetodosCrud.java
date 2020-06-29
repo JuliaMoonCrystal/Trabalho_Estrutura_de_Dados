@@ -20,7 +20,7 @@ public class MetodosCrud {
 		long tempo_Final=0;
       
 	  //AQUI CRIAMOS O ARQUIVO DESENPENHO.LOG PARA GUARDAR O TEMPO DE DESENPENHO// 	
-		 String file_desempenho="Desempenho.log";
+		 String file_desempenho="Desempenho.log4j";
 		 BufferedWriter write = new BufferedWriter(new FileWriter( file_desempenho ));
 		
 		//Aqui tem a criação do arquivo //
