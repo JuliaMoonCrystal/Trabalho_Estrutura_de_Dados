@@ -39,14 +39,14 @@ public class MetodosCrud {
 			 dados_lista.add(new dados(nova_regiao,novo_indice,nova_qualidade));
 		 }
 		
-		// ADICIONA ALGUNS ELEMENTOS NA LinkedList// 
+		// ADICIONA ALGUNS ELEMENTOS NA LINKEDLIST// 
 		 dados_lista.add(new dados("São Paulo",30,"N1-Boa"));
 		 dados_lista.add(new dados("Rio de Janeiro",40,"N1-Boa"));
 		 dados_lista.add(new dados("Baia",10,"N1-Boa"));
 		 dados_lista.add(new dados("Piaui",80,"N2-Moderada"));
 		 dados_lista.add(new dados("Rio Grande do Sul",60,"N2-Moderada"));      
 		
-        //Grava os dados no Arquivo//  
+        //Grava OS DADO NO ARQUIVO//  
         for(dados dado : dados_lista){
         	  System.out.println("Aqui a lista : "+dado.getRegiao()+" com indice de: "+dado.getDados_Regiao()+" de poluição  Qualidade do ar: "+dado.getQualidade()+"\n");	
         	  writer.write("Região : "+ dado.getRegiao()+" possui um nivel de : "+dado.getDados_Regiao()+" de poluição  Qualidade do Ar : "+dado.getQualidade()+"\n");  	
@@ -64,6 +64,12 @@ public class MetodosCrud {
 
 	public void Read(LinkedList<dados> dados_lista) throws IOException {
 		
+		long tempo_Inicial = System.currentTimeMillis();
+		long tempo_Final=0;	
+		
+		 String file_desempenho="Desempenho.log";
+		 BufferedWriter write = new BufferedWriter(new FileWriter( file_desempenho ));
+		
 	//AQUI PEGA O NOME DO ARQUIVO PARA PODER FAZER A LEITURA //	
 		 String fileName = "Entrada.txt";
 		 BufferedReader ler = new BufferedReader(new FileReader( fileName ));
@@ -79,6 +85,11 @@ public class MetodosCrud {
              line = ler.readLine();
          }
          ler.close();
+         
+         tempo_Final=System.currentTimeMillis()-tempo_Inicial;
+         write.write("\n\n O metodo READ levou : "+tempo_Final+ " para ser executado");
+         write.close();  
+         
 	}
 
 	public LinkedList<dados> Update(LinkedList<dados> dados_lista) {

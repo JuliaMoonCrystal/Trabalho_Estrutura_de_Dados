@@ -12,9 +12,10 @@ public class Principal {
 	  LinkedList<dados> dados_lista= new LinkedList<>();
 	  
 	  do{
-		  opc = Integer.parseInt(JOptionPane.showInputDialog("-----------Dados Ambientais----------- \n1 -Create Dados- "
+		  opc = Integer.parseInt(JOptionPane.showInputDialog("-----------Dados da qualidade do ar----------- \n1 -Create Dados- "
 		  		+ "\n2 -Read- \n3 -Update- \n4 -Delete- \n5 -Ordena por quickSort-  \n6 -Ordena por BubbleSort- \n7 Pesquisa na lista"
-		  		+ " \n8 -Finalizar Consulta "));
+		  		+ " \n8 -Hash "
+		  		+"\n -Finalizar consulta"));
            MetodosCrud metodos =new MetodosCrud();
            Ordenacao ordena=new Ordenacao();
             switch (opc)
