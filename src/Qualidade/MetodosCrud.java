@@ -71,7 +71,8 @@ public class MetodosCrud {
 			 BufferedWriter write = new BufferedWriter(new FileWriter( file_desempenho ));
 
 		//AQUI PEGA O NOME DO ARQUIVO PARA PODER FAZER A LEITURA //	
-			 String fileName = "Entrada.txt";
+			 File fileName =new File("Entrada.txt");
+			 
 			 BufferedReader ler = new BufferedReader(new FileReader( fileName ));
 	         String line = ""; 
 
