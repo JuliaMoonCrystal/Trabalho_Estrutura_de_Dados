@@ -2,6 +2,7 @@ package Qualidade;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,9 +22,11 @@ public class MetodosCrud {
 			 BufferedWriter write = new BufferedWriter(new FileWriter( file_desempenho ));
 
 			//Aqui tem a criação do arquivo //
-			  String fileName = "Entrada.txt";
+			  File fileName = new File("Entrada.txt");
 			  BufferedWriter writer = new BufferedWriter(new FileWriter( fileName ));
-
+			  if(fileName.exists()) {
+				  fileName.delete();
+			  }
 			//aqui pergunta ao usauario quantos novos dados ele ira adicionar na lista//
 			  int novo_elemento=Integer.parseInt(JOptionPane.showInputDialog("Quantos novos dados você quer adicionar na lista ?"));
 
