@@ -1,7 +1,7 @@
 package Qualidade;
 
 public class dados {
-	String regiao;
+	 String regiao;
 	 double dados_Regiao;
 	 String qualidade;
 
