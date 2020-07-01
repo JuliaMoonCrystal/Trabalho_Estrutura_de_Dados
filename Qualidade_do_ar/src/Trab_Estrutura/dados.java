@@ -1,9 +1,9 @@
 package Trab_Estrutura;
 
 public class dados {
- private String regiao;
+ String regiao;
  double dados_Regiao;
- private String qualidade;
+ String qualidade;
  
 public dados(String regiao, double novo_indice,String qualidade) {
 	this.dados_Regiao=novo_indice;

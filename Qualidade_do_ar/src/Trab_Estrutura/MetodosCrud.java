@@ -67,7 +67,7 @@ public class MetodosCrud {
 		long tempo_Inicial = System.currentTimeMillis();
 		long tempo_Final=0;	
 		
-		 String file_desempenho="Desempenho.log";
+		 String file_desempenho="Desempenho.log4j";
 		 BufferedWriter write = new BufferedWriter(new FileWriter( file_desempenho ));
 		
 	//AQUI PEGA O NOME DO ARQUIVO PARA PODER FAZER A LEITURA //	

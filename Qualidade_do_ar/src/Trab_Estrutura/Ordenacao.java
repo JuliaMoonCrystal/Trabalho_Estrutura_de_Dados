@@ -34,7 +34,7 @@ public class Ordenacao {
 		for(dados dado : dados_lista) {
 			Collections.sort(dados_lista, new Bubblesort());
 			System.out.println("Aqui a lista : "+dado.getRegiao()+" com indice de: "+dado.getDados_Regiao()+" de polui��o  Qualidade do ar: "+dado.getQualidade()+"\n");
-			writer.write("Regi�o : "+ dado.getRegiao()+" possui um nivel de : "+dado.getDados_Regiao()+" de polui��o  Qualidade do Ar : "+dado.getQualidade()+"\n");
+			writer.write("Região : "+ dado.getRegiao()+" possui um nivel de : "+dado.getDados_Regiao()+" de polui��o  Qualidade do Ar : "+dado.getQualidade()+"\n");
 			writer.newLine();
 		}
 		writer.close();

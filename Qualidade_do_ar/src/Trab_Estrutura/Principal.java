@@ -38,7 +38,7 @@ public class Principal {
                   case 8: hr.Registro_cidade(dados_lista);
                              break;            
                              
-                  case 9: JOptionPane.showMessageDialog(null,"---FIM---");
+                  case 9: JOptionPane.showMessageDialog(null,"-----FIM-----");
                              break;             
                   default: JOptionPane.showMessageDialog(null,"opc inválida");
             }
